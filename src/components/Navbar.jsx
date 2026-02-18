@@ -35,7 +35,11 @@ const Navbar = ({ theme, setTheme }) => {
           onClick={() => setSidebarOpen(false)}
         />
 
-        <div className="flex flex-col gap-6 mt-16 px-6 text-gray-700 dark:text-white">
+        <div className="text-gray-700 dark:text-white sm:text-sm max-sm:w-60 max-sm:pl-10 
+        max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen
+         max-sm:h-full max-sm:flex-col max-sm:bg-primary 
+         max-sm:text-white max-sm:pt-20 flex sm:items-center
+          gap-5 transition-all">
           <a onClick={() => setSidebarOpen(false)} href="#">Home</a>
           <a onClick={() => setSidebarOpen(false)} href="#services">Services</a>
           <a onClick={() => setSidebarOpen(false)} href="#our-work">Our Work</a>
