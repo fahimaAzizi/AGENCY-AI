@@ -9,6 +9,9 @@ const Hero = () => {
         <img className='w-20' src={assets.group_profile} alt="" />
         <p className='text-xs font-medium'>Trusted by 10k+ people</p>
       </div>
+      <h1>
+        
+      </h1>
 
     </div>
   )
