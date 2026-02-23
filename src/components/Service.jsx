@@ -1,0 +1,47 @@
+import React from "react";
+import assets from "../assets/assets";
+
+import Title from "./Title";
+
+const Services = () => {
+
+  const servicesData = [
+    {
+      title: "Advertising",
+      description:
+        "We turn bold ideas into powerful digital solutions that connect, engage.",
+      icon: assets.ads_icon,
+    },
+    {
+      title: "Content Marketing",
+      description:
+        "We help you execute your plan and deliver results.",
+      icon: assets.marketing_icon,
+    },
+    {
+      title: "Content writing",
+      description:
+        "Boost your website ranking and drive organic traffic.",
+      icon: assets.content_icon,
+    },
+    {
+      title: "Social Media",
+      description:
+        "Build strong brand presence across all platforms.",
+      icon: assets.social_icon,
+    },
+  ];
+
+  return (
+    <div id='services' className='relative flex flex-col
+     items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 
+     text-gray-700 dark:text-white'>
+
+            <img src={assets.bgImage2} alt="" className='absolute -top-110 -left-70 -z-1 dark:hidden'/>
+            <Title title={"How we can help"} desc ='from strategy to execution, we craft digital solution that move your busines forward.'  />
+        </div>
+
+  );
+};
+
+export default Services;
