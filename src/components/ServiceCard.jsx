@@ -12,4 +12,14 @@ const ServiceCard = ({service, index}) => {
                     <img src={service.icon} alt="" className='max-w-24 bg-white dark:bg-gray-900 rounded-full m-2' />
                 </div>
 
-                <div className='flex-1'></div>
+                <div className='flex-1'>
+                  <h3 className='font-bold'>{service.title}</h3>
+                  <p className='text-sm mt-2'>{serbice.description}</p>
+                  </div>
+              </div>
+
+          </div>    
+      </div> 
+    )
+  }
+export default ServiceCard;
