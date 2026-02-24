@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import TrustedBy from './TrustedBy'
+import TrustedBy from './components/TrustedBy'
 import Services from './components/Service'
-import ServiceCard from './components/ServiceCard'
 
 
 function App() {
