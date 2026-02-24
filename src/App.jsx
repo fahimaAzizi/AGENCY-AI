@@ -14,7 +14,6 @@ getItem('theme') : 'light' )
      <Hero />
      <TrustedBy />
      <Services/>
-     <ServiceCard/>
     </div>
   )
 }
