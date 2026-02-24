@@ -1,7 +1,7 @@
 import React from "react";
 import assets from "../assets/assets";
-
 import Title from "./Title";
+import ServiceCard from "./ServiceCard";
 
 const Services = () => {
 
@@ -40,8 +40,10 @@ const Services = () => {
             <img src={assets.bgImage2} alt="" className='absolute -top-110 -left-70 -z-1 dark:hidden'/>
             <Title title={"How we can help"} desc ='from strategy to execution, we craft digital solution that move your busines forward.'  />
 
-            <div>
-              
+            <div className="flex flex-wrap justify-center gap-4">
+              {servicesData.map((service, index) => (
+                <ServiceCard key={index} service={service} index={index} />
+              ))}
             </div>
         </div>
 
