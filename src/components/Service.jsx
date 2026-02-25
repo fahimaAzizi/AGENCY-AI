@@ -39,6 +39,10 @@ const Services = () => {
 
             <img src={assets.bgImage2} alt="" className='absolute -top-110 -left-70 -z-1 dark:hidden'/>
             <Title title={"How we can help"} desc ='from strategy to execution, we craft digital solution that move your busines forward.'  />
+
+            <div>
+              
+            </div>
         </div>
 
   );
