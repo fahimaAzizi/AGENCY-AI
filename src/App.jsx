@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TrustedBy from './components/TrustedBy'
 import Services from './components/Service'
+import OurWork from './components/OurWork'
 
 
 function App() {
@@ -14,6 +15,7 @@ getItem('theme') : 'light' )
      <Hero />
      <TrustedBy />
      <Services/>
+     <OurWork />
     </div>
   )
 }
