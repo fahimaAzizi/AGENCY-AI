@@ -33,7 +33,18 @@ const OurWork = () => {
         title='Our latest work'
         desc='From strategy to execution, we craft digital solutions that move your business forward.'
       />
-      
+      <div>
+        {
+          workData.map((work ,index)=>(
+            <div key={index} className='hover:scale-102 duration-500 transition-all cursor-ponter'>
+              <img src={work.image} className='w-full rounded-xl' alt="" />
+              <h3 className='mt-3 mb-2 text-lg font-semibold'>{work.title}</h3>
+              <p className='text-sm opacity-60 w-5/6'>{work.description}</p>
+            </div>
+          ))
+        }
+
+      </div>
     </div>
   )
 }
