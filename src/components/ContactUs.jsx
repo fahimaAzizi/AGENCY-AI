@@ -1,6 +1,7 @@
 import React from 'react'
 import Title from './Title';
 import assets from '../assets/assets';
+import toast from 'react-hot-toast';
 
 const ContactUs = () => {
 
@@ -10,6 +11,12 @@ const ContactUs = () => {
     const formData = new FormData(event.target);
 
     formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    
+    try {
+      
+    } catch (error) {
+      
+    }
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -19,11 +26,10 @@ const ContactUs = () => {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
+       toast.success('Thank you for your submission')
       event.target.reset();
     } else {
-      console.log("Error", data);
-      setResult(data.message);
+     toast.error(data.message)
     }
   };
 
