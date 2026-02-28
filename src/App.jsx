@@ -5,6 +5,7 @@ import TrustedBy from './components/TrustedBy'
 import Services from './components/Service'
 import OurWork from './components/OurWork'
 import Teams from './components/Teams'
+import ContactUs from './components/ContactUs'
 
 
 function App() {
@@ -18,6 +19,7 @@ getItem('theme') : 'light' )
      <Services/>
      <OurWork />
      <Teams />
+     <ContactUs/>
     </div>
   )
 }
