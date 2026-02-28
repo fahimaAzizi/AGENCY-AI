@@ -13,12 +13,7 @@ const ContactUs = () => {
     formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
     
     try {
-      
-    } catch (error) {
-      
-    }
-
-    const response = await fetch("https://api.web3forms.com/submit", {
+        const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData
     });
@@ -31,6 +26,11 @@ const ContactUs = () => {
     } else {
      toast.error(data.message)
     }
+    } catch (error) {
+      toast.error(data.message)
+    }
+
+  
   };
 
 
