@@ -3,6 +3,32 @@ import Title from './Title';
 import assets from '../assets/assets';
 
 const ContactUs = () => {
+
+    const onSubmit = async (event) => {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
+
+
   return (
     <div
       id="contact-us"
@@ -13,7 +39,7 @@ const ContactUs = () => {
         desc="From strategy to execution, we craft digital solutions that move your business forward."
       />
 
-      <form className="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full">
+      <form onSubmit={onsubmit} className="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full">
         <div>
           <p className="mb-2 text-sm font-medium">Your name</p>
 
@@ -21,6 +47,7 @@ const ContactUs = () => {
             <img src={assets.person_icon} alt="" />
 
             <input
+            name='name'
               type="text"
               placeholder="Enter your name"
               className="w-full p-3 text-sm outline-none"
@@ -34,6 +61,7 @@ const ContactUs = () => {
     <img src={assets.email_icon} alt="" />
 
     <input
+    name='email'
       type="email"
       placeholder="Enter your email"
       className="w-full p-3 text-sm outline-none"
@@ -46,9 +74,10 @@ const ContactUs = () => {
   <p className="mb-2 text-sm font-medium">Message</p>
 
   <textarea
+  name='message'
     rows={8}
     placeholder="Enter your message"
-    className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600"
+    className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600" required
   />
 </div>
 
