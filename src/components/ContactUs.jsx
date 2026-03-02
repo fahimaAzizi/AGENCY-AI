@@ -1,5 +1,6 @@
 import React from 'react'
 import Title from './Title';
+import assets from '../assets/assets';
 
 const ContactUs = () => {
   return (
@@ -26,6 +27,11 @@ const ContactUs = () => {
             />
           </div>
         </div>
+
+         <button type='submit'> submit <img src={assets.arrow_icon} alt="" />
+
+         </button>
+      
       </form>
     </div>
   );
