@@ -27,8 +27,33 @@ const ContactUs = () => {
             />
           </div>
         </div>
+        <div>
+  <p className="mb-2 text-sm font-medium">Email id</p>
 
-         <button type='submit'> submit <img src={assets.arrow_icon} alt="" />
+  <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
+    <img src={assets.email_icon} alt="" />
+
+    <input
+      type="email"
+      placeholder="Enter your email"
+      className="w-full p-3 text-sm outline-none"
+      required
+    />
+  </div>
+</div>
+
+<div className="">
+  <p className="mb-2 text-sm font-medium">Message</p>
+
+  <textarea
+    rows={8}
+    placeholder="Enter your message"
+    className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600"
+  />
+</div>
+
+         <button type='submit'> 
+          submit <img src={assets.arrow_icon} alt="" className='w-4' />
 
          </button>
       
