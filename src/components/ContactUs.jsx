@@ -5,35 +5,31 @@ import toast from 'react-hot-toast';
 
 const ContactUs = () => {
 
-    const onSubmit = async (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
-    
+
     const formData = new FormData(event.target);
-
     formData.append("access_key", "34b2092c-44e3-41f7-99d5-f7e34f954c47");
-    
+
     try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-       toast.success('Thank you for your submission')
-      event.target.reset();
-    } else {
-     toast.error(data.message)
-    }
+      if (data.success) {
+        toast.success("Thank you for your submission!");
+        event.target.reset();
+      } else {
+        toast.error(data.message || "Submission failed.");
+      }
+
     } catch (error) {
-      toast.error(data.message)
+      toast.error("Something went wrong. Please try again.");
     }
-
-  
   };
-
-
 
   return (
     <div
@@ -45,58 +41,71 @@ const ContactUs = () => {
         desc="From strategy to execution, we craft digital solutions that move your business forward."
       />
 
-      <form onSubmit={onsubmit} className="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full">
+      <form 
+        onSubmit={onSubmit} 
+        className="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full"
+      >
+
+        {/* Name Field */}
         <div>
           <p className="mb-2 text-sm font-medium">Your name</p>
 
-          <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
-            <img src={assets.person_icon} alt="" />
+          <div className="flex items-center pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
+            <img src={assets.person_icon} alt="" className="w-5 h-5" />
 
             <input
-            name='name'
+              name="name"
               type="text"
               placeholder="Enter your name"
-              className="w-full p-3 text-sm outline-none"
+              required
+              className="w-full p-3 text-sm outline-none bg-transparent"
             />
           </div>
         </div>
+
+        {/* Email Field */}
         <div>
-  <p className="mb-2 text-sm font-medium">Email id</p>
+          <p className="mb-2 text-sm font-medium">Email id</p>
 
-  <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
-    <img src={assets.email_icon} alt="" />
+          <div className="flex items-center pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
+            <img src={assets.email_icon} alt="" className="w-5 h-5" />
 
-    <input
-    name='email'
-      type="email"
-      placeholder="Enter your email"
-      className="w-full p-3 text-sm outline-none"
-      required
-    />
-  </div>
-</div>
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              required
+              className="w-full p-3 text-sm outline-none bg-transparent"
+            />
+          </div>
+        </div>
 
-<div className="">
-  <p className="mb-2 text-sm font-medium">Message</p>
+        {/* Message Field */}
+        <div className="sm:col-span-2">
+          <p className="mb-2 text-sm font-medium">Message</p>
 
-  <textarea
-  name='message'
-    rows={8}
-    placeholder="Enter your message"
-    className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600" required
-  />
-</div>
+          <textarea
+            name="message"
+            rows={6}
+            placeholder="Enter your message"
+            required
+            className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent"
+          />
+        </div>
 
-         <button type='submit' className='w-max flex gap-2 bg-primary text-white text-sm
-         px-10 py-3 rounded-full coursor-ponter hover:scale-103 transition-all'> 
-          submit <img src={assets.arrow_icon} alt="" className='w-4' />
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-max flex items-center gap-2 bg-primary text-white text-sm
+          px-10 py-3 rounded-full cursor-pointer hover:scale-105 transition-all duration-300"
+        >
+          Submit
+          <img src={assets.arrow_icon} alt="" className="w-4" />
+        </button>
 
-         </button>
-      
       </form>
     </div>
   );
 };
 
 export default ContactUs;
-
