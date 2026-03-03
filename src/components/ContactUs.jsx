@@ -87,7 +87,8 @@ const ContactUs = () => {
   />
 </div>
 
-         <button type='submit'> 
+         <button type='submit' className='w-max flex gap-2 bg-primary text-white text-sm
+         px-10 py-3 rounded-full coursor-ponter hover:scale-103 transition-all'> 
           submit <img src={assets.arrow_icon} alt="" className='w-4' />
 
          </button>
