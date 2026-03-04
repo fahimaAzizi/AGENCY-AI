@@ -1,75 +1,39 @@
 import React from 'react'
-import assets from '../assets/assets'
 
 const Footer = () => {
   return (
-    <div className='bg-slate-50 dark:bg-gray-900 pt-16 mt-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-gray-700 dark:text-gray-300'>
+    <div className='bg-slate-50 dark:bg-gray-900 pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40'>
 
-      {/* Top Section */}
-      <div className='flex flex-col lg:flex-row justify-between gap-12'>
+      {/* footer top */}
 
-        {/* Left Side - Logo & Description */}
-        <div className='max-w-md'>
-          <img 
-            src={assets.logo} 
-            alt="logo" 
-            className='w-32 sm:w-40 mb-4' 
-          />
-          <p className='text-sm leading-relaxed'>
-            From strategy to execution, we craft digital solutions that move 
-            your business forward. We build modern, scalable, and powerful 
-            experiences for brands worldwide.
+      <div className='flex justify-between lg:items-center max-lg:flex-col gap-10'>
+
+        <div>
+          <img src={assets.logo} className='w-32 sm:w-44' alt="" />
+          <p className='max-w-md'>
+            From strategy to execution, we craft digital
+            solutions that move your business forward.
           </p>
-        </div>
 
-        {/* Middle - Navigation Links */}
-        <div>
-          <h3 className='text-lg font-semibold mb-4 text-gray-900 dark:text-white'>
-            Quick Links
-          </h3>
-
-          <ul className='flex flex-col gap-3 text-sm'>
+          <ul>
             <li>
-              <a href="#hero" className='hover:text-primary transition'>
-                Home
-              </a>
+              <a className='hover:text-primary' href="#hero">Home</a>
             </li>
             <li>
-              <a href="#services" className='hover:text-primary transition'>
-                Services
-              </a>
+              <a className='hover:text-primary' href="#services">Services</a>
             </li>
             <li>
-              <a href="#our-work" className='hover:text-primary transition'>
-                Our Work
-              </a>
+              <a className='hover:text-primary' href="#our-work">Our Work</a>
             </li>
             <li>
-              <a href="#contact-us" className='hover:text-primary transition'>
-                Contact Us
+              <a className='hover:text-primary' href="#contact-us">
+                Contact US
               </a>
             </li>
           </ul>
+
         </div>
 
-        {/* Right Side - Contact Info */}
-        <div>
-          <h3 className='text-lg font-semibold mb-4 text-gray-900 dark:text-white'>
-            Contact
-          </h3>
-
-          <ul className='flex flex-col gap-3 text-sm'>
-            <li>Email: info@agencyai.com</li>
-            <li>Phone: +1 (123) 456-7890</li>
-            <li>Location: Toronto, Canada</li>
-          </ul>
-        </div>
-
-      </div>
-
-      {/* Bottom Section */}
-      <div className='border-t border-gray-300 dark:border-gray-700 mt-12 pt-6 text-center text-sm'>
-        © {new Date().getFullYear()} Agency AI. All rights reserved.
       </div>
 
     </div>
