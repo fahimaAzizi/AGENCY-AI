@@ -1,4 +1,5 @@
 import React from 'react'
+import assets from '../assets/assets'
 
 const Footer = () => {
   return (
@@ -8,14 +9,28 @@ const Footer = () => {
 
       <div className='flex justify-between lg:items-center max-lg:flex-col gap-10'>
 
-        <div>
-          <img src={assets.logo} className='w-32 sm:w-44' alt="" />
+        <div className='space-y-5 text-sm text-gray-700 dark:text-gray-400'>
+
+          {/* Light Logo */}
+          <img 
+            src={assets.logo} 
+            className='w-32 sm:w-44 dark:hidden' 
+            alt="logo" 
+          />
+
+          {/* Dark Logo */}
+          <img 
+            src={assets.logo_dark} 
+            className='w-32 sm:w-44 hidden dark:block' 
+            alt="logo" 
+          />
+
           <p className='max-w-md'>
             From strategy to execution, we craft digital
             solutions that move your business forward.
           </p>
 
-          <ul>
+          <ul className='space-y-2'>
             <li>
               <a className='hover:text-primary' href="#hero">Home</a>
             </li>
@@ -27,7 +42,7 @@ const Footer = () => {
             </li>
             <li>
               <a className='hover:text-primary' href="#contact-us">
-                Contact US
+                Contact Us
               </a>
             </li>
           </ul>
