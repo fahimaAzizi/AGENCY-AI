@@ -24,7 +24,8 @@ getItem('theme') : 'light' )
      <OurWork />
      <Teams />
      <ContactUs/>
-     <Footer />
+     <Footer theme={theme} />
+
     </div>
   )
 }
