@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TrustedBy from './components/TrustedBy'
@@ -11,6 +11,8 @@ import Footer from './components/Footer'
 
 
 function App() {
+  const dotRef = useRef(null)
+  const outlineRef = useRef(null)
   const [theme , setTheme] = useState(localStorage.getItem('theme') ? localStorage.
 getItem('theme') : 'light' )
   return (
@@ -25,6 +27,17 @@ getItem('theme') : 'light' )
      <Teams />
      <ContactUs/>
      <Footer theme={theme} />
+
+     <div ref={outlineRef} className='fixed top-0  left-0 h-0 w-10 rounded-full
+     boeder boder-primary pomter-events-none z-[9999]'>
+
+     </div>
+     <div
+      ref={dotRef} className='fixed top-0  left-0 h-0 w-10 rounded-full
+     boeder boder-primary pomter-events-none z-[9999]'>
+
+
+     </div>
 
     </div>
   )
