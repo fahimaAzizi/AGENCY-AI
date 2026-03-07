@@ -11,10 +11,13 @@ import Footer from './components/Footer'
 
 
 function App() {
+const [theme , setTheme] = useState(localStorage.getItem('theme') ? localStorage.
+getItem('theme') : 'light' )
+
+
   const dotRef = useRef(null)
   const outlineRef = useRef(null)
-  const [theme , setTheme] = useState(localStorage.getItem('theme') ? localStorage.
-getItem('theme') : 'light' )
+  
   return (
 
     <div className='dark:bg-black relative'>
@@ -29,7 +32,7 @@ getItem('theme') : 'light' )
      <Footer theme={theme} />
 
      <div ref={outlineRef} className='fixed top-0  left-0 h-0 w-10 rounded-full
-     boeder boder-primary pomter-events-none z-[9999]'>
+     boeder boder-primary pomter-events-none z-[9999]' style={}>
 
      </div>
      <div
