@@ -29,6 +29,9 @@ useEffect(() => {
   }
 
   document.addEventListener('mousemove', handleMouseMove)
+  const animatate =() =>{
+    
+  }
 
 }, [])
   
