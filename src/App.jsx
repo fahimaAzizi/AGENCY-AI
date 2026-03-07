@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TrustedBy from './components/TrustedBy'
@@ -17,6 +17,20 @@ getItem('theme') : 'light' )
 
   const dotRef = useRef(null)
   const outlineRef = useRef(null)
+
+  const mouse = useRef({ x: 0, y: 0 })
+const position = useRef({ x: 0, y: 0 })
+
+useEffect(() => {
+
+  const handleMouseMove = (e) => {
+    mouse.current.x = e.clientX
+    mouse.current.y = e.clientY
+  }
+
+  document.addEventListener('mousemove', handleMouseMove)
+
+}, [])
   
   return (
 
