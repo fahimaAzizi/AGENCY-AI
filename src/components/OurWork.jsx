@@ -21,7 +21,7 @@ const OurWork = () => {
       title: 'fitness app promotion',
       description:
         'We turn bold ideas into powerful digital solutions that connect, engage...',
-      image: assets.work_fitness_app,
+      image: assets.work_fitness_app
     },
   ]
 
