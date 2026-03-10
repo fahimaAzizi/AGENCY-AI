@@ -17,9 +17,9 @@ const Footer = () => {
       <div className='flex justify-between lg:items-center max-lg:flex-col gap-10'>
 
         <motion.div
-        initial ={{opacity : 0, y: -30}}
+        initial ={{opacity : 0, y: 20}}
       whileInView={{opacity :1 ,y:0}}
-      transition={{ duration: 0.6 , delay : index * 0.2}}
+      transition={{ duration: 0.4 , delay : index * 0.1}}
       viewport={{once: true}}
          className='space-y-5 text-sm text-gray-700 dark:text-gray-400'>
 
@@ -60,7 +60,12 @@ const Footer = () => {
           </ul>
 
         </motion.div>
-        <div className='text-gray-600 dark:text-gray-400'>
+        <motion.div 
+        initial ={{opacity : 0, y: 30}}
+      whileInView={{opacity :1 ,y:0}}
+      transition={{ duration: 0.6 , delay: 0.3}}
+      viewport={{once: true}}
+        className='text-gray-600 dark:text-gray-400'>
   <h3 className='font-semibold'>
     Subscribe to our newsletter
   </h3>
@@ -80,9 +85,10 @@ const Footer = () => {
       Subscribe
     </button>
   </div>
-</div>
+</motion.div>
 
       </div>
+      <hr  className='border-gray-300 dark:border-gray-600 my-6'/>
 
     </motion.div>
   )
